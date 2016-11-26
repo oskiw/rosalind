@@ -7,7 +7,11 @@ import scala.io.Source._
   */
 object DNA extends App {
 
-  val emptyMoleculesMap = "ACGT".toCharArray.map(_ -> 0).toMap
+  val emptyMoleculesMap =
+    "ACGT"
+      .toCharArray
+      .map(_ -> 0)
+      .toMap
 
   val dnaMoleculesMap =
     fromFile("datasets/rosalind_dna.txt")
@@ -18,10 +22,10 @@ object DNA extends App {
 
   println(
     emptyMoleculesMap
-      .map({
+      .map {
         case (k, v) =>
           k -> (v + dnaMoleculesMap.getOrElse(k, 0))
-      })
+      }
       .values
       .mkString(" ")
   )

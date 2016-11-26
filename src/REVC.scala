@@ -11,7 +11,7 @@ object REVC extends App {
       .mkString
       .reverse
       .toCharArray
-      .map{
+      .map {
         case 'A' => 'T'
         case 'T' => 'A'
         case 'C' => 'G'
